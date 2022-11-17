@@ -55,7 +55,7 @@ function (){
                 if(bombArray.includes(i)){
                     nuovoElemento.classList.add("bomb");
                     let punteggio = document.getElementsByClassName("clicked").length;
-                    document.getElementById("title").innerHTML = ` Il tuo punteggio è di ${punteggio} punti , Coglione`;
+                    document.getElementById("title").innerHTML = ` Il tuo punteggio è di ${punteggio} punti , hai perso`;
                    
                     console.log("il tuo punteggio è",punteggio);
                 }
@@ -89,7 +89,7 @@ function (){
                 if(bombArray.includes(i)){
                     nuovoElemento.classList.add("bomb");
                     let punteggio = document.getElementsByClassName("clicked").length;
-                    document.getElementById("title").innerHTML = ` Il tuo punteggio è di ${punteggio} punti , Coglione`;
+                    document.getElementById("title").innerHTML = ` Il tuo punteggio è di ${punteggio} punti , hai perso`;
                     console.log("il tuo punteggio è",punteggio);
                 }
                 else{
@@ -126,7 +126,7 @@ function (){
                 if(bombArray.includes(i)){
                     nuovoElemento.classList.add("bomb");
                     let punteggio = document.getElementsByClassName("clicked").length;
-                    document.getElementById("title").innerHTML = ` Il tuo punteggio è di ${punteggio} punti , Coglione`;
+                    document.getElementById("title").innerHTML = ` Il tuo punteggio è di ${punteggio} punti , hai perso`;
                     console.log("il tuo punteggio è",punteggio);
                 }
                 else{
