@@ -20,21 +20,26 @@ let difficult = document.getElementById("difficoltà");
 //Agganciamo la variabile bottone 
 let myBtn = document.querySelector("#play");
 
+
 //creiamo l'evento click del bottone
 
 myBtn.addEventListener("click",
 function (){
 
-   
+    
 
     //Creiamo le condizioni per le varie difficolta sottolineando il value
 
     if(difficult.value == "normal"){
-       
+
+       // Creo l'array delle bombe
+       const bombArray = genArrNumUnicRandomMinMax(16, 1, 100);
+       console.log(bombArray);
+
         container.innerHTML= "";
         for(let i=1 ; i<=100; i++){
-            let bombElement = createArrayNum(16, 1, i);
-
+            
+           
             let nuovoElemento = createBox("div","box");
             
             container.appendChild(nuovoElemento);
@@ -43,15 +48,23 @@ function (){
            
              nuovoElemento.addEventListener("click",
              function(){
-                nuovoElemento.classList.add("clicked");
+                
                 nuovoElemento.innerHTML = i;
                 console.log("Stai cliccando il numero",i);
+                if(bombArray.includes(i)){
+                    nuovoElemento.classList.add("bomb");
+                }
+                else(!bombArray.includes(i));
+                nuovoElemento.classList.add("clicked");
+                
              }
              )
            
         }
     } 
     if(difficult.value == "hard"){
+        const bombArray = genArrNumUnicRandomMinMax(16, 1, 81);
+        console.log(bombArray);
         container.innerHTML= "";
         for(let i=1 ; i<=81; i++){
             
@@ -78,6 +91,8 @@ function (){
         }
     } 
     if(difficult.value == "very-hard"){
+        const bombArray = genArrNumUnicRandomMinMax(16, 1, 49);
+        console.log(bombArray);
         container.innerHTML= "";
         for(let i=1 ; i<=49; i++){
             
@@ -121,18 +136,25 @@ function createBox(){
 
     return divElement;
 }
-function randomNumber(min, max) {
-    let randomNum = Math.floor(Math.random() * ((max + 1) - min) + min);
-    return randomNum
+// creo la funzione per generare numeri random
+function randomNumberMinMax (min, max) {
+    return ( Math.floor(Math.random() * ((max + 1) - min) + min));
 }
 
-function createArrayNum(numPossibilità, minNum, maxNum) {
-    let arrayNum = [];
-    while (arrayNum.length < numPossibilità) {
-        let randomNumForArray = randomNumber(minNum, maxNum);
-        if (!arrayNum.includes(randomNumForArray))
-            arrayNum.push(randomNumForArray);
+// creo la funzione per creare un arrey di numeri random unici 
+function genArrNumUnicRandomMinMax (maxElement, minNum, maxNum) {
+    
+    // creo l'array
+    const arrNumUnicRandom = [];
 
+    // genero i numeri da inserire nell'array
+    while (arrNumUnicRandom.length < maxElement) {
+        let newNumber = randomNumberMinMax (minNum, maxNum);
+        if (!arrNumUnicRandom.includes(newNumber)){
+            arrNumUnicRandom.push(newNumber);
+        }
     }
-    return arrayNum;
-};
+
+    // ritorno l'array generato
+    return arrNumUnicRandom;
+}
