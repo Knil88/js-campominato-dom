@@ -59,12 +59,9 @@ function (){
                    
                     console.log("il tuo punteggio è",punteggio);
                 }
-                if(!bombArray.includes(i)){
+                else{
+                    nuovoElemento.classList.add("clicked");
                     
-                    nuovoElemento.classList.add("clicked")
-                }
-                else {
-                    document.getElementById("title").innerHTML = `Complimenti hai vinto`;
                 }
                 
              }
