@@ -40,9 +40,10 @@ function (){
         for(let i=1 ; i<=100; i++){
             
            
+
             let nuovoElemento = createBox("div","box");
             
-            container.appendChild(nuovoElemento);
+            
     
             //creiamo l'evento click del bottone
            
@@ -53,9 +54,14 @@ function (){
                 console.log("Stai cliccando il numero",i);
                 if(bombArray.includes(i)){
                     nuovoElemento.classList.add("bomb");
+                    let punteggio = document.getElementsByClassName("clicked").length;
+                    document.getElementById("title").innerHTML = ` Il tuo punteggio è di ${punteggio} punti , Coglione`;
+                    console.log("il tuo punteggio è",punteggio);
                 }
-                else(!bombArray.includes(i));
-                nuovoElemento.classList.add("clicked");
+                else{
+                    nuovoElemento.classList.add("clicked");
+                    
+                }
                 
              }
              )
@@ -77,10 +83,19 @@ function (){
 
              nuovoElemento.addEventListener("click",
              function(){
-                nuovoElemento.classList.add("clicked");
+                
                 nuovoElemento.innerHTML = i;
-             
-                 console.log("Stai cliccando il numero",i);
+                if(bombArray.includes(i)){
+                    nuovoElemento.classList.add("bomb");
+                    let punteggio = document.getElementsByClassName("clicked").length;
+                    document.getElementById("title").innerHTML = ` Il tuo punteggio è di ${punteggio} punti , Coglione`;
+                    console.log("il tuo punteggio è",punteggio);
+                }
+                else{
+                    nuovoElemento.classList.add("clicked");
+                  
+                }
+                
              }
              )
            
@@ -105,10 +120,20 @@ function (){
             
              nuovoElemento.addEventListener("click",
              function(){
-                nuovoElemento.classList.add("clicked");
+                
                 nuovoElemento.innerHTML = i;
+                if(bombArray.includes(i)){
+                    nuovoElemento.classList.add("bomb");
+                    let punteggio = document.getElementsByClassName("clicked").length;
+                    document.getElementById("title").innerHTML = ` Il tuo punteggio è di ${punteggio} punti , Coglione`;
+                    console.log("il tuo punteggio è",punteggio);
+                }
+                else{
+                    nuovoElemento.classList.add("clicked");
+                   
+                }
                
-                console.log("Stai cliccando il numero",i);
+                
              }
              )
            
