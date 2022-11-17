@@ -1,0 +1,75 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding:0;
+}
+
+header{
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+.flex{
+    display:flex;
+}
+
+h1,#play{
+    align-self: center;
+}
+#play{
+width: 100%;
+}
+#width{
+    width: 16%;
+}
+body{
+    
+    font-family: sans-serif;
+    
+}
+
+h1{
+    text-align: center;
+}
+main {
+  overflow: scroll;
+  height: 100vh;
+    background-color: aqua;
+    padding: 40px 0px;
+ 
+}
+
+#container-grid{
+  
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  width: 55%;
+  
+  }
+
+  .box {
+    width: 10%;
+    height: 70px;
+    text-align: center;
+    line-height: 70px;
+    border: 1px solid #000;
+    background-color: #fff;
+}
+
+  
+
+  #difficoltà{
+    height: 20px;
+    align-self: center;
+  }
+  .box.clicked{
+    background-color: chartreuse;
+
+  }
+  footer{
+    background-color: white;
+    padding: 20px;
+    
+  }
