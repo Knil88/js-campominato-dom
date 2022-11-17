@@ -50,14 +50,28 @@ function (){
              nuovoElemento.addEventListener("click",
              function(){
                 
+                let punteggio = document.getElementsByClassName("clicked").length;
+                let conteggio = returnElement("score");
+                conteggio.innerHTML = "";
+                let h1 = document.createElement("h1");
+                h1.append("SCORE: 00" + punteggio +"0")
+                conteggio.append(h1)
+               
+                let celleMax= 100;
+                let noBombCell = celleMax - bombArray;
                 nuovoElemento.innerHTML = i;
-                console.log("Stai cliccando il numero",i);
+                
+               
                 if(bombArray.includes(i)){
                     nuovoElemento.classList.add("bomb");
                     let punteggio = document.getElementsByClassName("clicked").length;
+                    
                     document.getElementById("title").innerHTML = ` Il tuo punteggio è di ${punteggio} punti , hai perso`;
                    
                     console.log("il tuo punteggio è",punteggio);
+                }
+               else if(punteggio = noBombCell){
+                    document.getElementById("title").innerHTML = ` Complimenti hai vinto ,li tuo punteggio è di ${punteggio} punti `;
                 }
                 else{
                     nuovoElemento.classList.add("clicked");
@@ -92,6 +106,9 @@ function (){
                     document.getElementById("title").innerHTML = ` Il tuo punteggio è di ${punteggio} punti , hai perso`;
                     console.log("il tuo punteggio è",punteggio);
                 }
+                else if(punteggio = noBombCell){
+                    document.getElementById("title").innerHTML = ` Complimenti hai vinto ,li tuo punteggio è di ${punteggio} punti `;
+                }
                 else{
                     nuovoElemento.classList.add("clicked");
                   
@@ -122,6 +139,7 @@ function (){
              nuovoElemento.addEventListener("click",
              function(){
                 
+                
                 nuovoElemento.innerHTML = i;
                 if(bombArray.includes(i)){
                     nuovoElemento.classList.add("bomb");
@@ -129,9 +147,12 @@ function (){
                     document.getElementById("title").innerHTML = ` Il tuo punteggio è di ${punteggio} punti , hai perso`;
                     console.log("il tuo punteggio è",punteggio);
                 }
+                else if(punteggio = noBombCell){
+                    document.getElementById("title").innerHTML = ` Complimenti hai vinto ,li tuo punteggio è di ${punteggio} punti `;
+                }
                 else{
                     nuovoElemento.classList.add("clicked");
-                   
+                  
                 }
                
                 
@@ -184,3 +205,8 @@ function genArrNumUnicRandomMinMax (maxElement, minNum, maxNum) {
     // ritorno l'array generato
     return arrNumUnicRandom;
 }
+function returnElement (elemento) {
+
+    let element =  document.getElementById(elemento)
+    return element;
+  }
