@@ -79,3 +79,6 @@ main {
   #title{
     text-align: center;
   }
+  #score{
+    text-align: start;
+  }

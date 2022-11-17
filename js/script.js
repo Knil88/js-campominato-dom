@@ -50,7 +50,7 @@ function (){
              nuovoElemento.addEventListener("click",
              function(){
                 
-                let punteggio = document.getElementsByClassName("clicked").length;
+                let punteggio = document.getElementsByClassName("clicked").length+1;
                 let conteggio = returnElement("score");
                 conteggio.innerHTML = "";
                 let h1 = document.createElement("h1");
@@ -64,7 +64,7 @@ function (){
                
                 if(bombArray.includes(i)){
                     nuovoElemento.classList.add("bomb");
-                    let punteggio = document.getElementsByClassName("clicked").length;
+                    let punteggio = document.getElementsByClassName("clicked").length+1;
                     
                     document.getElementById("title").innerHTML = ` Il tuo punteggio è di ${punteggio} punti , hai perso`;
                    
@@ -92,13 +92,22 @@ function (){
             let nuovoElemento = createBox("div","box");
             nuovoElemento.style.width="11%";
             container.style.width="45%";
+            
             container.appendChild(nuovoElemento);
     
            //creiamo l'evento click del bottone
 
              nuovoElemento.addEventListener("click",
              function(){
-                
+                let punteggio = document.getElementsByClassName("clicked").length+1;
+                let conteggio = returnElement("score");
+                conteggio.innerHTML = "";
+                let h1 = document.createElement("h1");
+                h1.append("SCORE: 00" + punteggio +"0")
+                conteggio.append(h1)
+               
+                let celleMax= 81;
+                let noBombCell = celleMax - bombArray;
                 nuovoElemento.innerHTML = i;
                 if(bombArray.includes(i)){
                     nuovoElemento.classList.add("bomb");
@@ -139,7 +148,15 @@ function (){
              nuovoElemento.addEventListener("click",
              function(){
                 
-                
+                let punteggio = document.getElementsByClassName("clicked").length+1;
+                let conteggio = returnElement("score");
+                conteggio.innerHTML = "";
+                let h1 = document.createElement("h1");
+                h1.append("SCORE: 00" + punteggio +"0")
+                conteggio.append(h1)
+               
+                let celleMax= 49;
+                let noBombCell = celleMax - bombArray;
                 nuovoElemento.innerHTML = i;
                 if(bombArray.includes(i)){
                     nuovoElemento.classList.add("bomb");
