@@ -43,7 +43,7 @@ function (){
 
             let nuovoElemento = createBox("div","box");
             
-            
+            container.appendChild(nuovoElemento);
     
             //creiamo l'evento click del bottone
            
@@ -56,11 +56,15 @@ function (){
                     nuovoElemento.classList.add("bomb");
                     let punteggio = document.getElementsByClassName("clicked").length;
                     document.getElementById("title").innerHTML = ` Il tuo punteggio è di ${punteggio} punti , Coglione`;
+                   
                     console.log("il tuo punteggio è",punteggio);
                 }
-                else{
-                    nuovoElemento.classList.add("clicked");
+                if(!bombArray.includes(i)){
                     
+                    nuovoElemento.classList.add("clicked")
+                }
+                else {
+                    document.getElementById("title").innerHTML = `Complimenti hai vinto`;
                 }
                 
              }
