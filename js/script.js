@@ -20,9 +20,10 @@ let difficult = document.getElementById("difficoltà");
 //Agganciamo la variabile bottone 
 let myBtn = document.querySelector("#play");
 
-
+let layOver = document.getElementById("layover");
 //creiamo l'evento click del bottone
-
+let result =document.getElementById("title");
+let preTitle = document.getElementsByName("pre-title");
 myBtn.addEventListener("click",
 function (){
 
@@ -31,7 +32,7 @@ function (){
     //Creiamo le condizioni per le varie difficolta sottolineando il value
 
     if(difficult.value == "normal"){
-
+        
        // Creo l'array delle bombe
        const bombArray = genArrNumUnicRandomMinMax(16, 1, 100);
        console.log(bombArray);
@@ -53,9 +54,9 @@ function (){
                 let punteggio = document.getElementsByClassName("clicked").length+1;
                 let conteggio = returnElement("score");
                 conteggio.innerHTML = "";
-                let h1 = document.createElement("h1");
-                h1.append("SCORE: 00" + punteggio +"0")
-                conteggio.append(h1)
+                let h3 = document.createElement("h3");
+                h3.append("SCORE: 00" + punteggio +"0")
+                conteggio.append(h3)
                
                 let celleMax= 100;
                 let noBombCell = celleMax - bombArray;
@@ -66,12 +67,19 @@ function (){
                     nuovoElemento.classList.add("bomb");
                     let punteggio = document.getElementsByClassName("clicked").length+1;
                     
-                    document.getElementById("title").innerHTML = ` Il tuo punteggio è di ${punteggio}0 punti , hai perso`;
                    
-                    console.log("il tuo punteggio è",punteggio);
+                    setTimeout(() => {
+                        container.style.display ="none"
+                        document.getElementById("title").innerHTML = ` Il tuo punteggio è di ${punteggio}0 punti , hai perso`;
+                    }, 1500);
+                    console.log("il tuo punteggio è :00" + punteggio +"0");
                 }
                else if(punteggio = noBombCell){
-                    document.getElementById("title").innerHTML = ` Complimenti hai vinto ,li tuo punteggio è di ${punteggio}+0 punti `;
+                   
+                    setTimeout(() => {
+                        container.style.display ="none"
+                        document.getElementById("title").innerHTML = ` Complimenti hai vinto ,li tuo punteggio è di ${punteggio}0 punti `;
+                    }, 1500);
                 }
                 else{
                     nuovoElemento.classList.add("clicked");
@@ -102,9 +110,9 @@ function (){
                 let punteggio = document.getElementsByClassName("clicked").length+1;
                 let conteggio = returnElement("score");
                 conteggio.innerHTML = "";
-                let h1 = document.createElement("h1");
-                h1.append("SCORE: 00" + punteggio +"0")
-                conteggio.append(h1)
+                let h3 = document.createElement("h3");
+                h3.append("SCORE: 00" + punteggio +"0")
+                conteggio.append(h3)
                let gameover = false;
                 let celleMax= 81;
                 let noBombCell = celleMax - bombArray;
@@ -112,12 +120,20 @@ function (){
                 if(bombArray.includes(i)){
                     nuovoElemento.classList.add("bomb");
                     let punteggio = document.getElementsByClassName("clicked").length;
-                    document.getElementById("title").innerHTML = ` Il tuo punteggio è di ${punteggio}+0 punti , hai perso`;
+                  
+                     setTimeout(() => {
+                        container.style.display ="none"
+                        document.getElementById("title").innerHTML = ` Il tuo punteggio è di ${punteggio}0 punti , hai perso`;
+                     }, 1500);
                     console.log("il tuo punteggio è",punteggio);
                     
                 }
                 else if(punteggio = noBombCell){
-                    document.getElementById("title").innerHTML = ` Complimenti hai vinto ,li tuo punteggio è di ${punteggio} punti `;
+                    
+                     setTimeout(() => {
+                        container.style.display ="none"
+                        document.getElementById("title").innerHTML = ` Complimenti hai vinto ,li tuo punteggio è di ${punteggio}0 punti `;
+                     }, 1500);
                 }
                 else{
                     nuovoElemento.classList.add("clicked");
@@ -152,9 +168,9 @@ function (){
                 let punteggio = document.getElementsByClassName("clicked").length+1;
                 let conteggio = returnElement("score");
                 conteggio.innerHTML = "";
-                let h1 = document.createElement("h1");
-                h1.append("SCORE: 00" + punteggio +"0")
-                conteggio.append(h1)
+                let h3 = document.createElement("h3");
+                h3.append("SCORE: 00" + punteggio +"0")
+                conteggio.append(h3)
                
                 let celleMax= 49;
                 let noBombCell = celleMax - bombArray;
@@ -162,11 +178,19 @@ function (){
                 if(bombArray.includes(i)){
                     nuovoElemento.classList.add("bomb");
                     let punteggio = document.getElementsByClassName("clicked").length;
-                    document.getElementById("title").innerHTML = ` Il tuo punteggio è di ${punteggio} punti , hai perso`;
+                 
+                     setTimeout(() => {
+                        container.style.display ="none"
+                        document.getElementById("title").innerHTML = ` Il tuo punteggio è di ${punteggio}0 punti , hai perso`;
+                     }, 1500);
                     console.log("il tuo punteggio è",punteggio);
                 }
                 else if(punteggio = noBombCell){
-                    document.getElementById("title").innerHTML = ` Complimenti hai vinto ,li tuo punteggio è di ${punteggio} punti `;
+                   
+                     setTimeout(() => {
+                        container.style.display ="none"
+                        document.getElementById("title").innerHTML = ` Complimenti hai vinto ,li tuo punteggio è di ${punteggio}0 punti `;
+                     }, 1500);
                 }
                 else{
                     nuovoElemento.classList.add("clicked");
