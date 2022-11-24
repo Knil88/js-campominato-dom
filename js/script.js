@@ -66,12 +66,12 @@ function (){
                     nuovoElemento.classList.add("bomb");
                     let punteggio = document.getElementsByClassName("clicked").length+1;
                     
-                    document.getElementById("title").innerHTML = ` Il tuo punteggio è di ${punteggio} punti , hai perso`;
+                    document.getElementById("title").innerHTML = ` Il tuo punteggio è di ${punteggio}0 punti , hai perso`;
                    
                     console.log("il tuo punteggio è",punteggio);
                 }
                else if(punteggio = noBombCell){
-                    document.getElementById("title").innerHTML = ` Complimenti hai vinto ,li tuo punteggio è di ${punteggio} punti `;
+                    document.getElementById("title").innerHTML = ` Complimenti hai vinto ,li tuo punteggio è di ${punteggio}+0 punti `;
                 }
                 else{
                     nuovoElemento.classList.add("clicked");
@@ -105,15 +105,16 @@ function (){
                 let h1 = document.createElement("h1");
                 h1.append("SCORE: 00" + punteggio +"0")
                 conteggio.append(h1)
-               
+               let gameover = false;
                 let celleMax= 81;
                 let noBombCell = celleMax - bombArray;
                 nuovoElemento.innerHTML = i;
                 if(bombArray.includes(i)){
                     nuovoElemento.classList.add("bomb");
                     let punteggio = document.getElementsByClassName("clicked").length;
-                    document.getElementById("title").innerHTML = ` Il tuo punteggio è di ${punteggio} punti , hai perso`;
+                    document.getElementById("title").innerHTML = ` Il tuo punteggio è di ${punteggio}+0 punti , hai perso`;
                     console.log("il tuo punteggio è",punteggio);
+                    
                 }
                 else if(punteggio = noBombCell){
                     document.getElementById("title").innerHTML = ` Complimenti hai vinto ,li tuo punteggio è di ${punteggio} punti `;
